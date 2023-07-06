@@ -12,6 +12,9 @@ dotenv.config();
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send(`Server is running in ${process.env.NODE_ENV} environment`)
+})
 
 app.use('/user', loginRoutes)
 
